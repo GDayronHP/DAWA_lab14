@@ -1,6 +1,5 @@
 const BASE_URL = process.env.BASE_URL || "http://localhost:3000";
 
-// Simulación: esta función debería obtener los slugs reales desde una base de datos o CMS
 async function fetchBlogSlugs() {
   return ["articulo-1", "articulo-2", "guia-seo"];
 }
