@@ -1,18 +1,13 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { client } from "@/lib/sanity";
 import { notFound } from "next/navigation";
-
-type Props = {
-  params: {
-    slug: string;
-  };
-};
 
 export async function generateStaticParams() {
   const posts: { slug: string }[] = await client.fetch(`*[_type == "post"]{ "slug": slug.current }`);
   return posts.map((post) => ({ slug: post.slug }));
 }
 
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: any) {
   const post = await client.fetch(
     `*[_type == "post" && slug.current == $slug][0]`,
     { slug: params.slug }
@@ -26,7 +21,7 @@ export async function generateMetadata({ params }: Props) {
   };
 }
 
-export default async function BlogPostPage({ params }: Props) {
+export default async function BlogPostPage({ params }: any) {
   const post = await client.fetch(
     `*[_type == "post" && slug.current == $slug][0]`,
     { slug: params.slug }
