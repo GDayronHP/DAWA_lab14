@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dawa-lab14.netlify.app/
+Sitemap: https://dawa-lab14.netlify.app
