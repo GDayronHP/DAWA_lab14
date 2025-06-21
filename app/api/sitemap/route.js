@@ -1,7 +1,14 @@
-const BASE_URL = "https://dawa-lab14.netlify.app";
+import {client} from '@/lib/sanity'
+const BASE_URL = "https://dawa-lab14.netlify.app"
 
 async function fetchBlogSlugs() {
-  return ["articulo-1", "articulo-2", "guia-seo"];
+  const query = `*[_type == "post" && defined(slug.current)]{
+    "slug": slug.current
+  }`;
+
+  const posts = await client.fetch(query);
+
+  return posts.map(post => post.slug);
 }
 
 export async function GET() {
@@ -18,7 +25,7 @@ export async function GET() {
     <url>
       <loc>${BASE_URL}${url}</loc>
     </url>`)
-    .join("")}
+    .join('')}
 </urlset>`;
 
   return new Response(sitemap, {

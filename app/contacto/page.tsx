@@ -6,7 +6,7 @@ export const metadata = {
     description: "Soporte personalizado y atención al cliente.",
     url: "https://mi-sitio.com/contacto",
     type: "website",
-    images: ["https://mi-sitio.com/og-image-contacto.png"],
+    images: ["https://dawa-lab14.netlify.app/og-image-contacto.png"],
   },
 };
 

@@ -6,7 +6,7 @@ export const metadata = {
     description: "Explora nuestros servicios y contenido de calidad.",
     url: "https://mi-sitio.com/",
     type: "website",
-    images: ["https://mi-sitio.com/og-image-home.png"],
+    images: ["https://dawa-lab14.netlify.app/og-image-home.png"],
   },
 };
 

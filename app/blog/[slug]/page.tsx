@@ -32,7 +32,7 @@ export default async function BlogPostPage({ params }: any) {
   return (
     <main className="p-8 max-w-3xl mx-auto">
       <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
-      <p className="text-lg text-gray-700 whitespace-pre-line">{post.content}</p>
+      <p className="text-lg text-gray-300 whitespace-pre-line">{post.content}</p>
     </main>
   );
 }
